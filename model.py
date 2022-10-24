@@ -56,7 +56,7 @@ class Datos(Base):
     puolimo_laikas = Column("puolimas", String)
     stotis_id = Column(Integer, ForeignKey("stotis.id"))
     stotis = relationship("stotis", back_populates = "datos")
-    puolejas_id = relationship(Integer, ForeignKey("puolejas.id"))
+    puolejas_id = Column(Integer, ForeignKey("puolejas.id"))
     puolejas = relationship("puolejas", back_populates = "datos")
 
     def __repr__(self):
